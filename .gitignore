@@ -1,0 +1,32 @@
+# Python virtual environments
+.venv/
+__pycache__/
+*.pyc
+backend/.venv/
+backend/__pycache__/
+backend/*.pyc
+backend/.env
+
+# Node modules & build outputs
+node_modules/
+dist/
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# Uploads and temporary files
+backend/uploads/
+uploads/
+backend/downloads/
+downloads/
+
+# Editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+.DS_Store
+Thumbs.db

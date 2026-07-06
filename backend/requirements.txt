@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+sqlalchemy>=2.0
+psycopg[binary]
+pydantic>=2.0
+pydantic-settings
+alembic
+python-multipart
+python-dotenv
+pgvector
+langchain
+langchain-text-splitters
+langchain-google-genai
+google-generativeai
+pypdf
+python-docx
+reportlab
