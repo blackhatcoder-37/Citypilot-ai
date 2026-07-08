@@ -26,7 +26,7 @@ const KnowledgeBase = () => {
 
   const fetchDocs = () => {
     setLoading(true);
-    fetch('http://localhost:8000/upload/documents')
+    fetch(`${API_URL}/upload/documents`)
       .then(res => res.json())
       .then(json => {
         if (json.success && json.data) {
@@ -51,7 +51,7 @@ const KnowledgeBase = () => {
       const formData = new FormData();
       formData.append('file', fileToUpload);
 
-      fetch('http://localhost:8000/upload', {
+      fetch(`${API_URL}/upload`, {
         method: 'POST',
         body: formData,
       })
@@ -70,7 +70,7 @@ const KnowledgeBase = () => {
   };
 
   const removeFile = (id: number) => {
-    fetch(`http://localhost:8000/upload/documents/${id}`, {
+    fetch(`${API_URL}/upload/documents/${id}`, {
       method: 'DELETE',
     })
       .then(res => res.json())
