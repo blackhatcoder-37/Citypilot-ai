@@ -87,7 +87,7 @@ export const MapSidePanel: React.FC<MapSidePanelProps> = ({
     }
 
     setLoadingNearby(true);
-    fetch(`http://localhost:8000/map/nearby-resources?lat=${selectedComplaint.lat}&lng=${selectedComplaint.lng}&radius_km=${searchRadius}`)
+    fetch(``${API_URL}/map/nearby-resources?lat=${selectedComplaint.lat}&lng=${selectedComplaint.lng}&radius_km=${searchRadius}`)
       .then((res) => res.json())
       .then((json) => {
         if (json.success && json.data) {
