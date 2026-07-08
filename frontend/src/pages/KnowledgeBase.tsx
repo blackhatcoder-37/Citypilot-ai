@@ -1,3 +1,4 @@
+import { API_URL } from '../config';
 import { useState, useEffect, useRef } from 'react';
 import { UploadCloud, File as FileIcon, Trash2, BookOpen, FileText, Table, Loader2 } from 'lucide-react';
 
