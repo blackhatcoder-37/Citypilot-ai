@@ -1,3 +1,4 @@
+import { API_URL } from '../config';
 import { useEffect, useState } from 'react';
 import { Settings as SettingsIcon, User, Bell, Shield, Database } from 'lucide-react';
 
