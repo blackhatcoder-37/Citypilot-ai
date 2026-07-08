@@ -77,7 +77,7 @@ const CityMap = () => {
   // Load all map datasets dynamically
   const fetchAllMapData = useCallback(() => {
     // 1. Fetch complaints
-    fetch('http://localhost:8000/map/complaints')
+    fetch(`${API_URL}/map/complaints`)
       .then((res) => res.json())
       .then((json) => {
         if (json.success && json.data) setComplaints(json.data);
@@ -85,7 +85,7 @@ const CityMap = () => {
       .catch((err) => console.error('Complaints fetch error:', err));
 
     // 2. Fetch resources
-    fetch('http://localhost:8000/map/resources')
+    fetch(`${API_URL}/map/resources`)
       .then((res) => res.json())
       .then((json) => {
         if (json.success && json.data) setResources(json.data);
@@ -93,7 +93,7 @@ const CityMap = () => {
       .catch((err) => console.error('Resources fetch error:', err));
 
     // 3. Fetch heatmap coordinates
-    fetch('http://localhost:8000/map/heatmap')
+    fetch(`${API_URL}/map/heatmap`)
       .then((res) => res.json())
       .then((json) => {
         if (json.success && json.data) setHeatmapPoints(json.data);
@@ -101,7 +101,7 @@ const CityMap = () => {
       .catch((err) => console.error('Heatmap fetch error:', err));
 
     // 4. Fetch ward polygons
-    fetch('http://localhost:8000/map/wards')
+    fetch(`${API_URL}/map/wards`)
       .then((res) => res.json())
       .then((json) => {
         if (json.success && json.data && json.data.wards) {
@@ -111,7 +111,7 @@ const CityMap = () => {
       .catch((err) => console.error('Wards fetch error:', err));
 
     // 5. Fetch predictions
-    fetch('http://localhost:8000/map/predictions')
+    fetch(`${API_URL}/map/predictions`)
       .then((res) => res.json())
       .then((json) => {
         if (json.success && json.data) setPredictions(json.data);
@@ -129,7 +129,7 @@ const CityMap = () => {
   // AI search parser submission
   const handleAISearch = async (query: string) => {
     try {
-      const res = await fetch('http://localhost:8000/map/search', {
+      const res = await fetch(`${API_URL}/map/search`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query }),
