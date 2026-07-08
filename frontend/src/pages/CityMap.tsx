@@ -1,3 +1,4 @@
+import { API_URL } from '../config';
 import { useEffect, useState, useCallback } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
