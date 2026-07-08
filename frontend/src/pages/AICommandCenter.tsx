@@ -48,7 +48,7 @@ const AICommandCenter = () => {
     setError(null);
     setResult(null);
 
-    fetch('http://localhost:8000/analyze', {
+    fetch(`${API_URL}/analyze`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query: searchQuery }),
@@ -75,7 +75,7 @@ const AICommandCenter = () => {
   };
 
   const downloadReport = () => {
-    fetch('http://localhost:8000/report', {
+    fetch(`${API_URL}/report`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ type: 'Emergency Risk Assessment' }),
