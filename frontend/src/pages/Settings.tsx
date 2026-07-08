@@ -15,7 +15,7 @@ const Settings = () => {
   const [system, setSystem] = useState<SystemStatus | null>(null);
 
   useEffect(() => {
-    fetch('http://localhost:8000/settings')
+    fetch(`${API_URL}/settings`)
       .then(res => res.json())
       .then(json => {
         if (json.success && json.data) setSystem(json.data);
