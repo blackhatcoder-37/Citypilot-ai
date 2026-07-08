@@ -36,7 +36,7 @@ const Reports = () => {
   const generateReport = (type: string) => {
     setLoading(type);
     setGenerated(null);
-    fetch('http://localhost:8000/report', {
+    fetch(`${API_URL}/report`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ type }),
