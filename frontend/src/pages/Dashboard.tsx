@@ -34,7 +34,7 @@ const Dashboard = () => {
   const [data, setData] = useState<DashboardData | null>(null);
 
   useEffect(() => {
-    fetch('http://localhost:8000/dashboard')
+    fetch(`${API_URL}/dashboard`)
       .then(res => res.json())
       .then(json => {
         if (json.success && json.data) {
