@@ -21,7 +21,7 @@ const Analytics = () => {
   const [data, setData] = useState<AnalyticsData | null>(null);
 
   useEffect(() => {
-    fetch('http://localhost:8000/analytics')
+    fetch(`${API_URL}/analytics`)
       .then(res => res.json())
       .then(json => {
         if (json.success && json.data) {
